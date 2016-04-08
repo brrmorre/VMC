@@ -33,9 +33,6 @@ def VMC(WF,ions,numSteps):
             test=R.copy()
             xsubzerowave=psi(R,R)
             randomgen=(numpy.random.rand()-0.5)*3
-            while numpy.abs(numpy.add(numpy.any(test[ptcl]),randomgen)) > 1.5:
-                randomgen=(numpy.random.rand()-0.5)*3
-
             test[ptcl]=numpy.add(test[ptcl],randomgen)
             xsub1=psi(test,test) # make your move for particle "ptcl"
             prob0=xsubzerowave**2
